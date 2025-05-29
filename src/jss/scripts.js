@@ -1,45 +1,42 @@
-// Filter Projects by Category
-function filterProjects(category) {
-  const cards = document.querySelectorAll(".project-card");
 
-  cards.forEach(card => {
-    if (category === "all" || card.classList.contains(category)) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
+    function filterProjects(category) {
+      const projects = document.querySelectorAll('.project-card');
+      if (category === 'all') {
+        projects.forEach((proj) => (proj.style.display = 'block'));
+        return;
+      }
+      projects.forEach((proj) => {
+        if (proj.classList.contains(category)) {
+          proj.style.display = 'block';
+        } else {
+          proj.style.display = 'none';
+        }
+      });
     }
-  });
-}
 
-// Contact Form Submission
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+    // Simple contact form validation and submission simulation
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formMessage = document.getElementById('formMessage');
+      const name = this.name.value.trim();
+      const email = this.email.value.trim();
+      const message = this.message.value.trim();
 
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-  const formMessage = document.getElementById("formMessage");
+      if (!name || !email || !message) {
+        formMessage.textContent = 'Please fill in all fields.';
+        formMessage.style.color = '#ff6b6b';
+        return;
+      }
 
-  if (name && email && message) {
-    formMessage.textContent = "Thanks for reaching out! I'll get back to you soon.";
-    formMessage.style.color = "green";
+      // Basic email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        formMessage.textContent = 'Please enter a valid email address.';
+        formMessage.style.color = '#ff6b6b';
+        return;
+      }
 
-    // Optionally clear the form
-    this.reset();
-  } else {
-    formMessage.textContent = "Please fill in all fields.";
-    formMessage.style.color = "red";
-  }
-});
-
-// Dynamic Year in Footer
-document.getElementById("year").textContent = new Date().getFullYear();
-
-// Real-Time Clock
-function updateTime() {
-  const now = new Date();
-  const timeString = now.toLocaleTimeString();
-  document.getElementById("time").textContent = timeString;
-}
-setInterval(updateTime, 1000);
-updateTime(); // Run once immediately
+      formMessage.style.color = '#d4af37';
+      formMessage.textContent = 'Thank you for your message! I will get back to you soon.';
+      this.reset();
+    });

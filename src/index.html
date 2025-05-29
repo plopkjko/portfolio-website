@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name | Portfolio</title>
+
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/styles.css">
+
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header d-flex justify-content-between align-items-center">
+    <h1>Tumininu Matthew-Akinsiku</h1>
+    <nav>
+      <ul class="nav-menu d-flex gap-3 mb-0">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Welcome to My Portfolio</h2>
+      <p>Crafting beautiful and functional web experiences</p>
+      <a href="#projects" class="cta-button">View My Work</a>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>Tumininu Matthew Akinsiku is the kind of frontend developer whose work speaks with clarity and creativity. His code doesn’t just function—it flows. There’s a certain beauty in how he blends structure with style, precision with personality.
+
+His time at Moat Academy Bootcamp was a defining chapter, where he immersed himself in the world of PHP and JavaScript. It wasn’t a crash course, and it wasn’t a marathon—it was just the right depth, giving him a solid foundation in backend logic while sharpening his frontend finesse. You can tell when you see his work: this is someone who took the time to learn, build, and grow..</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-filters mb-3 text-center">
+      <button onclick="filterProjects('all')" class="btn btn-outline-warning me-2">All</button>
+      <button onclick="filterProjects('javascript')" class="btn btn-outline-warning me-2">JavaScript</button>
+      <button onclick="filterProjects('ui')" class="btn btn-outline-warning">UI</button>
+    </div>
+    <div class="project-grid">
+      <div class="project-card javascript">
+        <img src="./projects/project1/image1.jpg" alt="Project 1 Screenshot" class="img-fluid rounded" />
+        <h3>Project 1: Age Calculator</h3>
+        <p>A simple and Age calculator app built with HTML, CSS, and JavaScript.</p>
+        <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+        <a href="./projects/project1/project1.html" target="_blank" rel="noopener noreferrer">Live Demo</a>
+      </div>
+      <div class="project-card ui">
+        <img src="./projects/project2/image2.jpg" alt="Project 2 Screenshot" class="img-fluid rounded" />
+        <h3>Project 2: Dice Roll Simulator</h3>
+        <p>A responsive portfolio website showcasing my work and skills.</p>
+        <p><strong>Technologies:</strong> HTML, CSS, Bootstrap</p>
+        <a href="./projects/project2/project2.html" target="_blank" rel="noopener noreferrer">Live Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill">
+        <label for="htmlSkill" class="form-label">HTML</label>
+        <div class="progress" id="htmlSkill" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+          <div style="width: 90%;"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <label for="cssSkill" class="form-label">CSS</label>
+        <div class="progress" id="cssSkill" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+          <div style="width: 85%;"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <label for="jsSkill" class="form-label">JavaScript</label>
+        <div class="progress" id="jsSkill" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+          <div style="width: 75%;"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <label for="bootstrapSkill" class="form-label">Bootstrap</label>
+        <div class="progress" id="bootstrapSkill" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+          <div style="width: 70%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="experience">
+    <h2>Experience</h2>
+
+    <div class="job">
+      <h3>Frontend Developer</h3>
+      <p><em>PicAir Company | Mar 2025 - Present</em></p>
+      <ul>
+        <li>Developed and maintained web applications using Bootstrap.</li>
+        <li>Collaborated with designers and worked my way to develop the app.</li>
+        <li>Optimized app performance and improved accessibility standards.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>Web Developer Intern</h3>
+      <p><em>Moat Academy | Jun 2024 - Sept 2024</em></p>
+      <ul>
+        <li>Assisted in building responsive websites and fixing UI bugs.</li>
+        <li>Worked with a team to develop websites.</li>
+        <li>Gained experience in HTML, CSS, JavaScript, and Git.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm" novalidate>
+      <input type="text" id="name" name="name" placeholder="Your Name" required />
+      <input type="email" id="email" name="email" placeholder="Your Email" required />
+      <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+
+      <p id="formMessage" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Tumininu Matthew-Akinsiku. All rights reserved. | <a href="tumiakinsiku@gmail.com">tumiakinsiku@gmail.com</a>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS for filtering projects and form -->
+      <script src="./jss/scripts.js"></script>
+</body>
+
+</html>
+ 

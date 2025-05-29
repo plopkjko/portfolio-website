@@ -1,0 +1,250 @@
+/* Variables for gold colors and gradients */
+:root {
+  --gold: #d4af37;
+  --gold-dark: #b58e23;
+  --gold-gradient: linear-gradient(90deg, #d4af37 0%, #b58e23 100%);
+}
+
+/* Body with dark background and elegant fonts */
+body {
+  background-color: #0a0a0a;
+  color: white;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header */
+header.header {
+  background-color: #1a1a1a;
+  padding: 1rem 2rem;
+  border-bottom: 2px solid var(--gold);
+}
+header.header h1 {
+  color: var(--gold);
+  font-weight: 700;
+  margin: 0;
+}
+nav ul.nav-menu {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+}
+nav ul.nav-menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+nav ul.nav-menu li a:hover {
+  color: var(--gold);
+}
+
+/* Hero Section with background image and overlay */
+.hero {
+  padding: 8rem 2rem;
+  text-align: center;
+  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.7);
+  z-index: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.hero-content h2 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  background-clip: text; /* added unprefixed */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* added unprefixed */
+}
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #f5f5dccc;
+}
+
+/* Call to Action Button */
+.cta-button {
+  background: var(--gold-gradient);
+  color: #0a0a0a;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  box-shadow: 0 4px 12px #d4af37aa;
+  animation: glow 2s infinite alternate; /* smoother glow */
+}
+.cta-button:hover {
+  background: var(--gold-dark);
+  color: white;
+  box-shadow: 0 0 20px #d4af37cc;
+  transform: translateY(-5px);
+}
+
+/* Sections */
+section {
+  padding: 3rem 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+section h2 {
+  font-weight: 800;
+  margin-bottom: 2rem;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  background-clip: text; /* added unprefixed */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* added unprefixed */
+  border-bottom: 2px solid var(--gold);
+  display: inline-block;
+  padding-bottom: 0.25rem;
+}
+
+/* Project Cards */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.project-card {
+  background-color: #1a1a1a;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px var(--gold);
+}
+.project-card h3 {
+  color: var(--gold); /* replaced hardcoded color */
+  margin-top: 1rem;
+}
+.project-card p {
+  color: #eee;
+}
+.project-card a {
+  color: var(--gold);
+  font-weight: 600;
+  text-decoration: none;
+  margin-right: 0.5rem;
+}
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+/* Skills Progress Bars */
+.skills-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.skill {
+  margin-bottom: 1.25rem;
+}
+.progress-bar > div {
+  height: 1rem;
+  background-color: var(--gold);
+  border-radius: 5px;
+}
+
+/* Experience (Job & Education) */
+.job, .education {
+  background-color: #1a1a1a;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+/* Contact Form */
+form#contactForm {
+  max-width: 500px;
+  margin: 0 auto;
+}
+form input, form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  background-color: #121212;
+  color: white;
+}
+form button {
+  background: var(--gold-gradient);
+  border: none;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  color: #0a0a0a;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px #d4af37aa;
+  animation: glow 2s infinite alternate;
+}
+form button:hover {
+  background: var(--gold-dark);
+  color: white;
+  box-shadow: 0 0 20px #d4af37cc;
+  transform: translateY(-5px);
+}
+#formMessage {
+  margin-top: 1rem;
+  color: var(--gold);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background-color: #0d0d0d;
+  text-align: center;
+  padding: 1rem 2rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  color: #ccc;
+  font-size: 0.9rem;
+}
+footer a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Glow animation for cta buttons and form buttons */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #d4af37bb;
+  }
+  50% {
+    box-shadow: 0 0 20px #d4af37;
+  }
+  100% {
+    box-shadow: 0 0 10px #d4af37bb;
+  }
+}
